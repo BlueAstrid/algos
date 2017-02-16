@@ -19,7 +19,7 @@ int main()
 {
   vector<string> inputs;
   string search_key, input;
-  int result;
+  //int result;
 
    cout<<"Welcome to \"search it\". We first need some input data."<<endl;
    cout<<"We'll assume the inputs do not have any spaces."<<endl<<endl;
@@ -42,10 +42,10 @@ int main()
   }
  
    cout<<endl<<"To end input type the #-character (followed by Enter)"<<endl<<endl;
- insertionSort(input);
- cout << "sorted data" << endl; 
-for (int x = 0; x < data.size(); x++){
-	cout << x << endl;
+ insertionSort(inputs);
+ cout << "sorted data: " << endl; 
+for (int x = 0; x < inputs.size(); x++){
+	cout << inputs[x] << endl;
 } 
   //cout<<"Enter a value to search for: ";
 
@@ -82,10 +82,10 @@ for (int x = 0; x < data.size(); x++){
 //} 
 
 void insertionSort (auto& data){
-	for (int i = 1; i < Data.size(); i++){
+	for (int i = 1; i < data.size(); i++){
 		int j = i;
-	while (j > 0 && (data [j] < Data [j-1])){
-		swap (Data [j], Data [j-1]);
+	while (j > 0 && (data [j] < data [j-1])){
+		swap (data [j], data [j-1]);
 		j--;
 	}
 }
