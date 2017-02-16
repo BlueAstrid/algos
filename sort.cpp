@@ -13,7 +13,7 @@ using namespace std;
 \returns location of key if found or -1 if not found
 */
 //int linearSearch(auto data, auto key);//prototype
-void selectionSort (auto& Data); 
+void insertionSort (auto& data);
 
 int main()
 {
@@ -42,27 +42,31 @@ int main()
   }
  
    cout<<endl<<"To end input type the #-character (followed by Enter)"<<endl<<endl;
- // cout<<"Enter a value to search for: ";
-cout << "The sorted values are" << endl;
-cout << inputs;  
+ insertionSort(input);
+ cout << "sorted data" << endl; 
+for (int x = 0; x < data.size(); x++){
+	cout << x << endl;
+} 
+  //cout<<"Enter a value to search for: ";
+
 
    //cin>>search_key;
  
-//    while(search_key != "#")//perform searches until sentinel entered
-  //  {
-    //    result = linearSearch(inputs,search_key);
+    //while(search_key != "#")//perform searches until sentinel entered
+    //{
+       // result = linearSearch(inputs,search_key);
 
-//        cout<<"  '"<<search_key<<"' was ";
+        //cout<<"  '"<<search_key<<"' was ";
 
-  //      if (result == -1)
-    //      cout<<"not found";
-      //  else
-        //  cout<<"found at index "<<result;
+        //if (result == -1)
+          //cout<<"not found";
+        //else
+          //cout<<"found at index "<<result;
 
 
-       // cout<<endl<<endl<<"Enter a value to search for: ";
+        //cout<<endl<<endl<<"Enter a value to search for: ";
         //cin>>search_key; 
-   // }
+    //}
 
   // cout<<endl<<"Program \"search it\" is now finished."<<endl<<endl;
 
@@ -75,19 +79,15 @@ cout << inputs;
 //		}
 //	}
 //	return -1;
-//}
+//} 
 
-void selectionSort (auto& Data){
-	int minIndex;
-	for (int i = 0; i < Data.size(); i++){
-		minIndex = i;
-		for (j = i + i; j < Data.size(); j++){
-			if (Data [j] < Data [minIndex])
-				minIndex = j;
-		}
-		if (minIndex != i)
-			swap (Data [minIndex] Data [i]);
-		}
+void insertionSort (auto& data){
+	for (int i = 1; i < Data.size(); i++){
+		int j = i;
+	while (j > 0 && (data [j] < Data [j-1])){
+		swap (Data [j], Data [j-1]);
+		j--;
+	}
+}
 }
 
-	
